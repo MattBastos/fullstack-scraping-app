@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Scraper</title>
+  <link rel="stylesheet" href="./src/styles/reset.css" />
+  <link rel="stylesheet" href="./src/styles/main.css" />
+</head>
+<body>
+  <section id="app">
+    <header>
+      <h1>Meu Scraper</h1>
+    </header>
+  
+    <section>
+      <input id="keywordInput" placeholder="Digite o termo de pesquisa">
+      <button id="searchButton">Buscar</button>
+    </section>
+
+    <section id="results" style="display: none;">
+      <h2>Resultados:</h2>
+      <section id="productsContainer"></section>
+    </section>
+  </section>
+
+  <script src="./src/scripts/index.js"></script>
+</body>
+</html>

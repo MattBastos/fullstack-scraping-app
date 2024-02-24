@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #ededed;
+}
+
+#app {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+input {
+  width: 70%;
+  padding: 8px;
+  margin-right: 8px;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #ffe600;
+}
+
+.product {
+  border: 1px solid #cccccc;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
