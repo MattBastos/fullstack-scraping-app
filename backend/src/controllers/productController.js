@@ -1,5 +1,6 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
+const formatProductRatingAndReviews = require('../utils/stringFormatter');
 
 const mercadoLivreURL = 'https://lista.mercadolivre.com.br/';
 
@@ -19,13 +20,13 @@ const getProducts = async (req, res) => {
     const products = [];
 
     $('.ui-search-layout>li').each((_i, el) => {
-      const productTitle = $(el).find('.ui-search-item__group--title').text();
-      const productRatingAndReviews = $(el).find('.andes-visually-hidden').text().replace(/^,*/, '').trimStart().replace(/^Avaliação/, 'Avaliação');
-      const productImage = $(el).find('.ui-search-result-image__element').attr('src');
+      const productTitle = $(el).find('.ui-search-item__title').text();
+      const productRatingAndReviews = $(el).find('.andes-visually-hidden').text();
+      const productImage = $(el).find('img.ui-search-result-image__element').attr('src');
 
       const product = {
         title: productTitle,
-        ratingAndReviews: productRatingAndReviews,
+        ratingAndReviews: formatProductRatingAndReviews(productRatingAndReviews),
         image: productImage
       };
 
