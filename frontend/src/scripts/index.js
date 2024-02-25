@@ -1,5 +1,6 @@
 const displayResults = (products) => {
   const resultsContainer = document.getElementById('results');
+  resultsContainer.innerHTML = '';
 
   resultsContainer.style.display = 'grid';
 
