@@ -1,30 +1,29 @@
 const displayResults = (products) => {
   const resultsContainer = document.getElementById('results');
-  const productsContainer = document.getElementById('productsContainer');
 
-  resultsContainer.style.display = 'block';
+  resultsContainer.style.display = 'grid';
 
-  productsContainer.innerHTML = '';
+  products.forEach((product) => {
+    if (product.title && product.ratingAndReviews) {
+      const productCard = document.createElement('section');
+      productCard.className = 'product';
 
-  products.forEach(product => {
-    const productElement = document.createElement('section');
-    productElement.className = 'product';
+      const productImage = document.createElement('img');
+      productImage.src = product.image;
+      productImage.alt = 'Imagem do produto';
 
-    const titleElement = document.createElement('h3');
-    titleElement.textContent = product.title;
+      const productTitle = document.createElement('h3');
+      productTitle.textContent = product.title;
 
-    const ratingAndReviewsElement = document.createElement('p');
-    ratingAndReviewsElement.textContent = product.ratingAndReviews;
+      const productRatingAndReviewsElement = document.createElement('p');
+      productRatingAndReviewsElement.textContent = product.ratingAndReviews || 'O produto não possui avaliações.';
 
-    const imageElement = document.createElement('img');
-    imageElement.src = product.image;
-    imageElement.alt = 'Imagem do produto';
+      productCard.appendChild(productImage);
+      productCard.appendChild(productTitle);
+      productCard.appendChild(productRatingAndReviewsElement);
 
-    productElement.appendChild(titleElement);
-    productElement.appendChild(ratingAndReviewsElement);
-    productElement.appendChild(imageElement);
-
-    productsContainer.appendChild(productElement);
+      resultsContainer.appendChild(productCard);
+    }
   });
 }
 
@@ -49,4 +48,10 @@ const setupSearchButton = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   setupSearchButton();
+});
+
+document.getElementById('keywordInput').addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+    startScraping();
+  }
 });
