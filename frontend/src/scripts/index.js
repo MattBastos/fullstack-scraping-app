@@ -103,12 +103,26 @@ const setupSearchButton = () => {
   searchButton.addEventListener('click', startScraping);
 }
 
+
+/**
+ * Event listener for the 'DOMContentLoaded' event, triggers the setup of the search button.
+ * @listens DOMContentLoaded
+ */
 document.addEventListener('DOMContentLoaded', () => {
+  // Set up the search button when the DOM content is fully loaded
   setupSearchButton();
 });
 
+
+/**
+ * Event listener for the 'keydown' event on the keyword input, triggers scraping on 'Enter' key press.
+ * @listens keydown
+ * @param {Event} event - The keydown event.
+ */
 document.getElementById('keywordInput').addEventListener('keydown', function (event) {
+  // Check if the pressed key is 'Enter
   if (event.key === 'Enter') {
+    // Trigger the scraping process when 'Enter' key is pressed
     startScraping();
   }
 });
