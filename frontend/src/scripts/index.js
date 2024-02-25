@@ -1,5 +1,14 @@
+/**
+ * Display or hide the loading indicator based on the provided flag.
+ * @param {boolean} isLoading - A flag indicating whether to show or hide the loading indicator.
+ * @returns {void}
+ */
+
 const displayLoading = (isLoading) => {
+  // Get the loading element from the DOM
   const loading = document.getElementById('loading');
+
+  // Set the display style based on the isLoading flag
   loading.style.display = isLoading ? 'block' : 'none';
 }
 
