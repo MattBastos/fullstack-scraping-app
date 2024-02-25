@@ -2,9 +2,17 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const formatProductRatingAndReviews = require('../utils/stringFormatter');
 
+// Base URL for Mercado Livre to perform searches.
 const mercadoLivreURL = 'https://lista.mercadolivre.com.br/';
 
+
+/**
+ * Fetches HTML content from a URL using axios.
+ * @param {string} searchURL - The URL from which to obtain the HTML content.
+ * @returns {string} - The HTML content of the page.
+ */
 const getHTML = async (searchURL) => {
+  // Performs an HTTP request using axios and returns the HTML content.
   const { data } = await axios.get(searchURL);
   return data;
 };
