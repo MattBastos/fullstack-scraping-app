@@ -29,7 +29,6 @@ const displayResults = (products) => {
 
   // Iterate through the array of products and create a card for each valid product
   products.forEach((product) => {
-
     // Check if the product is valid and has a title and ratingAndReviews
     if (product.title && product.ratingAndReviews) {
       // Create a new section element for the product card
@@ -60,21 +59,33 @@ const displayResults = (products) => {
   });
 }
 
+
+/**
+ * Initiates the scraping process, fetching data based on the provided keyword and displaying the results.
+ * @returns {Promise<void>} - A promise that resolves once the scraping process is completed.
+ */
 const startScraping = async () => {
+  // Display the loading indicator while scraping is in progress
   displayLoading(true);
 
+  // Define the URL for the scraping API endpoint
   const URL = 'http://localhost:3000/api/scrape?keyword='
+  // Get the keyword from the input field
   const keyword = document.getElementById('keywordInput').value;
 
+  // Fetch data from the scraping API based on the provided keyword and parse the response as JSON
   await fetch(`${URL}${keyword}`)
     .then(response => response.json())
     .then(products => {
+      // Display the search results on the webpage
       displayResults(products);
     })
     .catch(error => {
+      // Log an error message if an error occurs during the scraping process
       console.error('Erro ao realizar scraping:', error);
     });
 
+  // Hide the loading indicator once scraping is completed or an error occurs
   displayLoading(false);
 }
 
