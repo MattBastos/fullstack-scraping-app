@@ -70,6 +70,7 @@ const startScraping = async () => {
 
   // Define the URL for the scraping API endpoint
   const URL = 'http://localhost:3000/api/scrape?keyword='
+
   // Get the keyword from the input field
   const keyword = document.getElementById('keywordInput').value;
 
@@ -89,8 +90,16 @@ const startScraping = async () => {
   displayLoading(false);
 }
 
+
+/**
+ * Sets up the search button, adding a click event listener to trigger the scraping process.
+ * @returns {void} - This function does not have a return value.
+ */
 const setupSearchButton = () => {
+  // Get the search button element by its ID
   const searchButton = document.getElementById('searchButton');
+
+  // Add a click event listener to the search button, triggering the startScraping function
   searchButton.addEventListener('click', startScraping);
 }
 
