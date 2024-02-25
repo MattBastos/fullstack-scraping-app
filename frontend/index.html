@@ -4,24 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Meu Scraper</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <link rel="stylesheet" href="./src/styles/reset.css" />
   <link rel="stylesheet" href="./src/styles/main.css" />
 </head>
 <body>
-  <section id="app">
+  <section>
     <header>
       <h1>Meu Scraper</h1>
     </header>
-  
-    <section>
-      <input id="keywordInput" placeholder="Digite o termo de pesquisa">
-      <button id="searchButton">Buscar</button>
-    </section>
+    
+    <main>
+      <section id="searchSection">
+        <input id="keywordInput" placeholder="Digite o termo de pesquisa">
+        <button id="searchButton">Buscar</button>
+      </section>
 
-    <section id="results" style="display: none;">
-      <h2>Resultados:</h2>
-      <section id="productsContainer"></section>
-    </section>
+      <section id="results" style="display: none;">
+        <section id="productsContainer"></section>
+      </section>
+  </main>
   </section>
 
   <script src="./src/scripts/index.js"></script>
