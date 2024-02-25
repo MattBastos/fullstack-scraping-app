@@ -15,7 +15,8 @@ header {
 }
 
 h1 {
-  font-size: xx-large;
+  font-family: 'Dancing Script', sans-serif;
+  font-size: 50px;
   color: #000000
 }
 
@@ -43,6 +44,12 @@ input {
   margin-right: 8px;
   border-radius: 5px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid #ffe600;
 }
 
 button {
@@ -55,6 +62,17 @@ button {
 
 button:hover {
   background-color: #f3d600;
+}
+
+button:active {
+  background-color: #c8a200;
+}
+
+#loading {
+  display: none;
+  font-family: 'Dancing Script', sans-serif;
+  font-size: 40px;
+  color: #000000
 }
 
 #results {
