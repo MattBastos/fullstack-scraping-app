@@ -22,7 +22,7 @@ const getProducts = async (req, res) => {
     $('.ui-search-layout>li').each((_i, el) => {
       const productTitle = $(el).find('.ui-search-item__title').text();
       const productRatingAndReviews = $(el).find('.andes-visually-hidden').text();
-      const productImage = $(el).find('img.ui-search-result-image__element').attr('src');
+      const productImage = $(el).find('.ui-search-result-image__element').attr('data-src');
 
       const product = {
         title: productTitle,
