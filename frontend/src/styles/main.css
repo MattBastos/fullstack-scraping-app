@@ -68,6 +68,13 @@ button:active {
   background-color: #c8a200;
 }
 
+#loading {
+  display: none;
+  font-family: 'Dancing Script', sans-serif;
+  font-size: 40px;
+  color: #000000
+}
+
 #results {
   display: none;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

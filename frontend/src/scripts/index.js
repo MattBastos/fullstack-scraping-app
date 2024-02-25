@@ -1,3 +1,8 @@
+const displayLoading = (isLoading) => {
+  const loading = document.getElementById('loading');
+  loading.style.display = isLoading ? 'block' : 'none';
+}
+
 const displayResults = (products) => {
   const resultsContainer = document.getElementById('results');
   resultsContainer.innerHTML = '';
@@ -29,6 +34,8 @@ const displayResults = (products) => {
 }
 
 const startScraping = async () => {
+  displayLoading(true);
+
   const URL = 'http://localhost:3000/api/scrape?keyword='
   const keyword = document.getElementById('keywordInput').value;
 
@@ -40,6 +47,8 @@ const startScraping = async () => {
     .catch(error => {
       console.error('Erro ao realizar scraping:', error);
     });
+
+  displayLoading(false);
 }
 
 const setupSearchButton = () => {
